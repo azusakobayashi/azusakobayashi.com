@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<head>
+<title>CLOUD</title>
+<style type="text/css">
+body, html {
+	overflow:hidden;
+	width: 100%;
+	height: 100%;
+	margin:0;
+	padding:0;
+	font-family: "Times New Roman", sans-serif;
+	color: black;
+	font-size:28px;
+	line-height: 30px;
+	background-color: black;
+  -webkit-font-smoothing: antialiased;
+/*    -webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+cursor:default;*/
+}
+
+
+.fg {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: none;
+position: absolute;
+}
+
+.bg {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  display: none;
+  position: absolute;
+}
+
+
+
+.info {
+  color: rgba(0,0,0,0);
+	padding:48px;
+	width:60%;
+  position: fixed;
+  display: none;
+    z-index: 10000;
+
+/* 	box-shadow:4px 4px 100px rgba(255, 255, 255, .8); 
+ text-shadow: 0px 0px 8px rgba(255,255,255,1);
+  position: fixed;
+	top:25%;
+	left: 15%;*/
+/* 	border: 8px solid blue; */
+	letter-spacing: 4px;
+  /*-webkit-transform:rotate(20deg);
+  -webkit-animation-name: oscillation1;
+  -webkit-animation-duration: 40s; 
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;*/
+}
+
+
+.preload {
+ color: white;
+  padding:48px;
+  width:50%;
+  position: absolute;
+
+}
+
+.horiz {
+/*  background-color: white;
+  position: fixed;
+  top:-400px;
+  left:-200px;
+  width: 200%;
+  height: 80%;
+  -webkit-animation-name: oscillation2;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;=
+  -webkit-transform: rotate(-6deg);*/
+
+}
+
+@-webkit-keyframes oscillation1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 208px 23px;
+  }
+  33% {
+    -webkit-transform: rotate(15deg);
+    -webkit-transform-origin: 208px 23px;
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+    -webkit-transform-origin: 208px 23px;
+  }
+}
+
+
+@-webkit-keyframes oscillation2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 208px 232px;
+  }
+  33% {
+    -webkit-transform: rotate(5deg);
+    -webkit-transform-origin: 208px 232px;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 208px 232px;
+  }
+}
+
+
+a {
+  color: rgba(0,0,0,0);
+	text-decoration: none;
+  text-shadow: 0px 0px 8px rgba(255,255,255,1);
+}
+
+a:hover {
+  text-shadow: 0px 0px 6px rgba(255,255,255,1);
+}
+
+</style>
+
+
+</head>
+<body>
+<div class="preload">&hellip;</div>
+<div class="bg"></div>
+<div class="info"></div>
+<div class="fg"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>
+jQuery(document).ready(function($) {
+  $.ajax({
+  url : "http://api.wunderground.com/api/63885e241b5ba717/geolookup/astronomy/q/CT/New_Haven.json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var setHour = parsed_json['moon_phase']['sunset']['hour'];
+  var setMinute = parsed_json['moon_phase']['sunset']['minute'];
+  var age = parsed_json['moon_phase']['ageOfMoon'];
+  var illuminated = parsed_json['moon_phase']['percentIlluminated'];
+  $('.info').html("Sibyl tensed her lips in the expression of hers I liked least. &ldquo;We are on the Earth, the Earth has a force which means it can keep planets around itself, on its own, like the Sun. What can the Moon oppose, in the way of mass, field of gravity, orbit stability, consistency? Surely you don't mean to compare the two? The Moon is all soft, the Earth is hard, solid, the Earth endures.&rdquo;<br /><br /> The moon will rise at " + setHour + ":" + setMinute + " today in <a href='http://www.newmoonhaven.com/'>" + location + "</a>. The moon is " + age + " days old and is " + illuminated + "% illuminated." );
+  // var blur = age / 30 * 10;
+  // if (age < 15) {
+  //     var blur = age / 30 * 10;
+  // } else {
+  //     var blur = age / 30 * 10;
+  // }
+
+  var moonsky = "rgba(0,0,0," + (1-(illuminated / 100)) + ")";
+  var moonlight = "0px 0px " + Math.floor((1-(illuminated / 100))*20) + "px rgba(255,255,255," + (illuminated / 100) + ")";
+
+  console.log (moonlight);
+  $('.fg').css("background-color", moonsky).fadeIn(2500);
+  $('.info').css("text-shadow", moonlight).fadeIn(2500);
+  $('.bg').css("background-color","#02104F").fadeIn(2500);
+  $('.preload').fadeOut(1000);
+
+  }
+  });
+});
+</script>
+
+</body>
+</html>

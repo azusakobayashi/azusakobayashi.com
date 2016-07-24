@@ -1,0 +1,325 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="EN"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>Lunar Atlas</title> 
+<style type="text/css"> 
+html {overflow: auto;} 
+html, body, iframe {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  border: none;
+  background-color:rgba(0,0,255,1);
+  font-family: arial, sans-serif;
+  letter-spacing: 1px;
+  font-size:60px;
+  color:white;
+} 
+
+.ask {
+  text-align: center;
+  padding-top:100px;
+  min-width: 900px;
+  line-height: 1.5em;
+}
+
+.zip {
+  font-size:60px;
+  margin-top: 30px;
+  font-family: arial, sans-serif;
+  letter-spacing: 1px;
+  padding-bottom:6px;
+  background-color:transparent;
+  width:480px;
+  border:none;
+  color: rgba(127, 255, 212, 0.6);
+  border-bottom:4px solid white;
+  padding:none;
+  outline: none;
+}
+
+.gogo{
+  font-size:60px;
+  margin-top: 30px;
+  font-family: arial, sans-serif;
+  letter-spacing: 1px;
+  padding-bottom:6px;
+  background-color:transparent;
+  width:480px;
+  border:none;
+  color: rgba(127, 255, 212, 0.6);
+  border-bottom:4px solid white;
+  padding:none;
+  outline: none;
+}
+
+.goback {
+  font-size:60px;
+  font-family: arial, sans-serif;
+  padding:6px;
+  background-color:transparent;
+  color: white;
+/*  border:4px solid white;*/
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: fixed;
+  bottom:40px;
+  right:40px;
+  display: none;
+}
+
+.moonphase {
+  font-size:60px;
+  font-family: arial, sans-serif;
+  letter-spacing: 1px;
+  padding:6px;
+  background-color:transparent;
+  color: white;
+/*  border:4px solid white;*/
+  outline: none;
+  position: fixed;
+  top:40px;
+  left:40px;
+  display: none;
+  padding-left:20px;
+  padding-right:20px;
+}
+
+
+.gobtn {
+  font-size:60px;
+  font-family: arial, sans-serif;
+  padding:6px;
+  background-color:transparent;
+  color: white;
+  /*border:4px solid white;*/
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  border: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top:0;
+  left:0;
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -ms-filter: fliph; /*IE*/
+  filter: fliph; /*IE*/
+  display: none;
+}
+
+.nm {
+  -webkit-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  position: fixed;
+  top: 45%;
+  right: 0%;
+
+}
+
+.fq {
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+  position: fixed;
+  top: 18%;
+  left: 38%;
+}
+
+.fm {
+  -webkit-transform:rotate(0deg);
+  -moz-transform:rotate(0deg);
+  -o-transform:rotate(0deg);
+  position: fixed;
+  top: 45%;
+  left: 0%;
+}
+
+.lq {
+  -webkit-transform:rotate(-90deg);
+  -moz-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+  position: fixed;
+  top: 72%;
+  left: 38%;
+}
+
+.waxc {
+  -webkit-transform:rotate(135deg);
+  -moz-transform:rotate(135deg);
+  -o-transform:rotate(135deg);
+  position: fixed;
+  top: 50%;
+  right: -5%;
+}
+
+.waxg {
+  -webkit-transform:rotate(45deg);
+  -moz-transform:rotate(45deg);
+  -o-transform:rotate(45deg);
+  position: fixed;
+  top: 20%;
+  left: -2%;
+}
+  
+.wanc {
+  -webkit-transform:rotate(-135deg);
+  -moz-transform:rotate(-135deg);
+  -o-transform:rotate(-135deg);
+  position: fixed;
+  top: 40%;
+  right: 0%;
+} 
+ 
+.wang {
+  -webkit-transform:rotate(-45deg);
+  -moz-transform:rotate(-45deg);
+  -o-transform:rotate(-45deg);
+  position: fixed;
+  top: 65%;
+  left: 0%;
+}
+
+
+</style> 
+
+</head> 
+
+<body> 
+
+          
+<div class="ask">
+  Select your origin:<br />
+  <span class="zip">06511</span><br /><br />
+  Select a destination:
+  <form action="#" method="post" id="former">    
+    <div class="inputarea">
+      <input type="text" class="gogo" value="art.yale.edu" onblur="if (this.value == '') {this.value = 'art.yale.edu'; $(this).css('color','rgba(255,255,255,.5)');}" onfocus="if (this.value == 'art.yale.edu') {this.value = ''; $(this).css('color','rgba(255,255,255,1)');}"> <input type="submit" class="gobtn" value=" &#8634; ">
+    </div>
+  </form>
+</div>
+
+<iframe id="tree" name="tree" frameborder="0" marginheight="0" marginwidth="0" width="100%" height="100%" scrolling="auto"></iframe> 
+
+<input type="submit" class="goback" value=" &#8635; ">
+
+<div class="moonphase"> Moon Phase </div>
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+
+  $(".goback").click(function() {
+    $('.gogo').blur();
+    $('.gogo').val("art.yale.edu");  
+    $(".goback").fadeOut();
+    $(".moonphase").fadeOut();
+    $("#tree").fadeOut(function() {
+      $(".ask").fadeIn();
+    });
+
+  return false;
+
+  });
+
+  $('#former').submit(function(){
+
+    srcstring = 'http://' + $('.gogo').val();  
+
+    $("#tree").attr("src",srcstring);
+    $(".ask").fadeOut(function() {
+      $('.gogo').css('color','rgba(255,255,255,.5)')
+      $("#tree").fadeIn();
+      $(".goback").fadeIn();
+      $(".moonphase").fadeIn();
+      $('.gogo').blur();
+    });
+
+    return false;
+
+  });
+
+  jQuery(document).ready(function($) {
+    $.ajax({
+      url : "http://api.wunderground.com/api/63885e241b5ba717/geolookup/astronomy/q/CT/New_Haven.json",
+      dataType : "jsonp",
+      success : function(parsed_json) {
+        var location = parsed_json['location']['city'];
+        var setHour = parsed_json['moon_phase']['sunset']['hour'];
+        var setMinute = parsed_json['moon_phase']['sunset']['minute'];
+        var age = parsed_json['moon_phase']['ageOfMoon'];
+        var illuminated = parsed_json['moon_phase']['percentIlluminated'];
+        
+        // var blur = age / 30 * 10;
+        // if (age < 15) {
+        //     var blur = age / 30 * 10;
+        // } else {
+        //     var blur = age / 30 * 10;
+        // }
+
+        //override illumination
+        illuminated=50;
+
+       
+
+        var moonsky = illuminated / 100;
+        var moonlight = "0px 0px " + Math.floor((1-(illuminated / 100))*20) + "px rgba(255,255,255," + (illuminated / 100) + ")";
+
+         //override age
+        age=16;
+
+        if (age == 1){
+           $('.moonphase').html("New Moon").addClass("nm");
+        };
+          if (age == 8){
+           $('.moonphase').html("First Quarter").addClass("fq");
+        };
+          if (age == 16){
+           $('.moonphase').html("Full Moon").addClass("fm");
+        };
+          if (age == 23){
+           $('.moonphase').html("Last Quarter").addClass("lq");
+        };
+        if (age > 1 && age < 8) {
+           $('.moonphase').html("Waxing Crescent").addClass("waxc");
+        };
+          if (age > 8 && age < 16) {
+           $('.moonphase').html("Waxing Gibbous").addClass("waxg");
+        };
+          if (age > 16 && age < 23) {
+           $('.moonphase').html("Waning Gibbous").addClass("wang");
+        };
+          if (age > 23) {
+           $('.moonphase').html("Waning Crescent").addClass("wanc");
+        };
+
+        $('iframe').css("opacity", moonsky);
+        
+        // $('.moonphase').css("text-shadow", moonlight).fadeIn(2500);
+        // $('.bg').css("background-color","#02104F").fadeIn(2500);
+        // $('.preload').fadeOut(1000);
+      }
+
+    });
+
+  });
+
+
+</script>
+
+
+</body> 
+
+
+</html>
+
