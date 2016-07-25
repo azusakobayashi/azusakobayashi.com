@@ -1,0 +1,174 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+#title1 {
+	position: fixed;
+	height: 200px;
+	line-height: 200px;
+	top:50%;
+	margin-top:-100px;
+	left: 10px;
+	font-family: "MS Mincho", Times New Roman, serif;
+	font-size: 42px;
+	letter-spacing: 10px;
+	z-index: 100;
+	pointer-events: none; /* to make the link below click-able */
+}
+
+#title2 {
+	position: fixed;
+	height: 200px;
+	line-height: 200px;
+	top:50%;
+	margin-top:-100px;
+	right: 0;
+	font-family: "MS Gothic", Arial, sans-serif;
+	font-size: 42px;
+	letter-spacing: 10px;
+	z-index: 200;
+	pointer-events: none;	/* to make the link below click-able */
+}
+
+#puzzle {
+	padding: 16px;
+	height: 680px;
+	width: 912px;
+	position: fixed;
+	top: 50%;
+	margin-top: -356px;
+	left: 50%;
+	margin-left: -472px;
+}
+
+.puzzsq {
+	margin: 0 16px 16px 0;
+	float: left;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+}
+
+.puzzsq img {
+	position: absolute;
+}
+
+#A8, #B8, #C8, #D8, #E8, #F8 {
+	margin: 0;
+}
+
+#overlay {
+	z-index: 400;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255,255,255,0.8);
+	position: fixed;
+	top:0;
+	left:0;
+	text-align: center;
+	cursor:pointer;
+}
+
+#overlaytext {
+	position: fixed;
+	height: 450px;
+	width: 450px;
+	top:50%;
+	margin-top:-225px;
+	left: 50%;
+	margin-left: -225px;
+	font-family: "MS Gothic", Arial, sans-serif;
+	font-size: 18px;
+	letter-spacing: 1px;
+	line-height: 1.25em;
+	/* background-color: yellow; */
+}
+
+#overlaybtn {
+	z-index: 300;
+	position: fixed;
+	top:0;
+	right:-4px;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	padding:16px;
+	cursor: pointer;
+}
+
+#whispersbtn {
+	z-index: 300;
+	position: fixed;
+	top:30px;
+	right:0;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	padding:16px;
+	cursor: pointer;
+
+}
+
+#whispersbtn a {
+	text-decoration: none;
+	color: black;
+
+
+
+}
+
+@-webkit-keyframes oscillation {
+	from {
+		-webkit-transform:rotate(-30deg);
+	} to {
+		-webkit-transform:rotate(30deg);
+	}
+}
+ 
+@-moz-keyframes oscillation {
+	from{
+		-moz-transform:rotate(-30deg);
+	} to {
+		-moz-transform:rotate(30deg);
+	}
+}
+
+.oscillate {  /* for the level symbol in upper right corner */
+	-webkit-animation: oscillation 30s ease-in-out infinite alternate;
+	-moz-animation: oscillation 30s ease-in-out infinite alternate;
+		
+}
+
+.oscillate2 {  /* for the level symbol in overlay text */
+	/* to move the point of origin, eg. pendulum hand
+-webkit-transform-origin:50% -40px;  
+	-moz-transform-origin:50% -40px;   
+*/
+	-webkit-animation: oscillation 8s ease-in-out infinite alternate;
+	-moz-animation: oscillation 8s ease-in-out infinite alternate;
+	font-family: Arial, sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 0 4px;
+}
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+/* Styles */
+background-color: fuchsia;
+}
+
+/* iPhone 4 ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+/* Styles */
+background-color: red;
+}

@@ -1,0 +1,190 @@
+body, html {
+	overflow:hidden;
+	width: 100%;
+	height: 100%;
+	margin:0;
+	padding:0;
+	font-family: "Arial", sans-serif;
+	color: black;
+	font-size:25px;
+	line-height: 35px;
+  letter-spacing: 1px;
+	background-color: white;
+}
+
+.updown {
+  text-shadow: 5px 5px rgba(0, 0, 0, .1);
+  font-style: italic;
+  letter-spacing: 10px;
+
+
+}
+
+.color-1 {
+  color: #0066FF;
+}
+
+.color-2 {
+  color: #66FFCC;
+}
+
+.color-3 {
+  color: #FF6699;
+}
+
+.bg {
+	width: 100%;
+	height: 100%;
+	
+}
+
+.bg-1 {
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #00FFFF 50%, #6600FF 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #00FFFF 50%, #6600FF 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #00FFFF 50%, #6600FF 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #00FFFF), color-stop(1, #6600FF));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #00FFFF 50%, #6600FF 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #00FFFF 50%, #6600FF 100%);
+	background-attachment: fixed;
+}
+
+.bg-2 {
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #00FF00 40%, #00FFFF 100%);
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #00FF00 40%, #00FFFF 100%);
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #00FF00 40%, #00FFFF 100%);
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.4, #00FF00), color-stop(1, #00FFFF));
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #00FF00 40%, #00FFFF 100%);
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #00FF00 40%, #00FFFF 100%);
+	background-attachment: fixed;
+}
+
+.bg-3 {
+  /* IE10 Consumer Preview */ 
+  background-image: -ms-linear-gradient(top, #FF00CC 50%, #FFFF33 100%);
+  /* Mozilla Firefox */ 
+  background-image: -moz-linear-gradient(top, #FF00CC 50%, #FFFF33 100%);
+  /* Opera */ 
+  background-image: -o-linear-gradient(top, #FF00CC 50%, #FFFF33 100%);
+  /* Webkit (Safari/Chrome 10) */ 
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5, #FF00CC), color-stop(1, #FFFF33));
+  /* Webkit (Chrome 11+) */ 
+  background-image: -webkit-linear-gradient(top, #FF00CC 50%, #FFFF33 100%);
+  /* W3C Markup, IE10 Release Preview */ 
+  background-image: linear-gradient(to bottom, #FF00CC 50%, #FFFF33 100%);
+  background-attachment: fixed;
+}
+
+
+.info {
+	background-color: white;
+	padding:18px;
+	width: 450px;
+ 	box-shadow:4px 4px 100px rgba(255, 255, 255, .8); 
+	position: fixed;
+	top:25%;
+	left: 25%;
+/* 	border: 8px solid blue; */
+	letter-spacing: 4px;
+  -webkit-transform:rotate(20deg);
+  -webkit-animation-name: oscillation1;
+  -webkit-animation-duration: 40s; 
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+.horiz {
+  background-color: white;
+  position: fixed;
+  top:-200px;
+  left:-200px;
+  width: 200%;
+  -webkit-animation-name: oscillation2;
+  -webkit-animation-duration: 20s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  -webkit-animation-timing-function: ease-in-out;=
+  -webkit-transform: rotate(-6deg);
+}
+
+.horizMed {
+  height: 80%;
+}
+
+.horizLow{
+  height: 95%;
+}
+
+.horizHigh{
+  height: 70%;
+}
+
+@-webkit-keyframes oscillation1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 208px 23px;
+  }
+  33% {
+    -webkit-transform: rotate(15deg);
+    -webkit-transform-origin: 208px 23px;
+  }
+  100% {
+    -webkit-transform: rotate(-20deg);
+    -webkit-transform-origin: 208px 23px;
+  }
+}
+
+
+@-webkit-keyframes oscillation2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 208px 232px;
+  }
+  33% {
+    -webkit-transform: rotate(5deg);
+    -webkit-transform-origin: 208px 232px;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    -webkit-transform-origin: 208px 232px;
+  }
+}
+
+#sb_logo {
+	opacity: 0.9;
+	z-index: 300;
+	position: fixed;
+	bottom:0;
+	right:0;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	padding:16px;
+	cursor: pointer;
+
+
+}
+
+
+/*.bg {
+  background-image:
+    linear-gradient(
+      #0000FF, 
+      rgba(255, 255, 0, 0.3), 
+      #00FFFF
+    );
+  width: 100%;
+  height: 100%;
+}*/

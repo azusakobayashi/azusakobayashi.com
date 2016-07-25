@@ -1,0 +1,96 @@
+body {
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.bg-image {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+
+#uploader {
+	z-index:100000;
+	position: fixed;
+	padding: 15px;
+	top: 10px;
+	left: 10px;
+	width: 200px;
+	height: 200px;
+	background-color: #000000;
+	opacity: 0.85;
+	box-shadow: 10px 10px 15px #FF00FF;
+	color: white;
+
+}
+
+#uploader p {
+	margin: 0;
+	padding: 0;
+	color: white;
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+ 	letter-spacing: 1px; 
+	line-height: 1.2em;
+
+}
+
+.buttony {
+
+}
+
+
+.circle1 {
+	position: absolute;
+	width: 500px;
+	height: 500px;
+	border-radius: 250px;
+    background-size: cover;
+    z-index: 1000;
+}
+
+.circle2 {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	border-radius: 100px;
+    background-size: cover;
+	z-index: 900;
+
+}
+
+.circle3 {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	border-radius: 75px;
+    background-size: cover;
+	z-index: 800;
+
+}
+
+.circle4{
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+    background-size: cover;
+	z-index: 700;
+
+}
+
+.circle5 {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 5px;
+    background-size: cover;
+	z-index: 600;
+
+}
+
+
